@@ -167,6 +167,54 @@ risk_score = (rain * 0.4) + (aqi * 0.3) + (area_risk * 0.3)
 
 * Mobile app deployment
 
+# Adversarial Defense & Anti-Spoofing Strategy
+## Problem
+A coordinated fraud ring (500+ delivery partners) exploits GPS spoofing and fake stranded claims
+to drain payout systems. Traditional GPS validation fails.
+## Objective
+• Detect fraud in real-time
+• Prevent payout exploitation
+• Protect genuine users
+## Core Approach: Multi-Signal Detection
+Combine GPS, behavior, device, and network signals into a unified decision system.
+## Location Intelligence
+Validate speed & distance, match routes with roads, and use sensor fusion.
+## Device Fingerprinting
+Detect multiple accounts per device and emulator/rooted devices.
+## Behavioral Profiling
+Track delivery patterns and flag abnormal activity.
+## Network Intelligence
+Monitor IP, VPN usage, and detect shared networks.
+## Graph-Based Detection
+Identify clusters of coordinated fraud users.
+## Risk Scoring (0–100)
+## Signal Weights
+
+| Signal   | Weight |
+|----------|--------|
+| GPS      | 30     |
+| Behavior | 30     |
+| Device   | 20     |
+| Network  | 20     |
+Decision: 0–30 Allow | 30–70 Monitor | 70+ Block
+## Genuine User Protection
+Grace thresholds, manual review, and appeal system.
+## Anti-Automation
+CAPTCHA, rate limiting, OTP verification.
+## Honeypot Strategy
+Fake scenarios to trap fraud bots.
+## System Architecture Flow
+1.User Request
+
+2.Multi-Signal Checks GPS + Device + Behavior + Network
+
+3.Risk Scoring Engine Decision
+
+4.Allow / Monitor / Block
+
+## Key Insight
+Fraud detection requires combining multiple weak signa
+
 # 🏆 Conclusion
 
 SurakshaPay transforms traditional insurance into a real-time, automated, and intelligent system, ensuring financial stability for gig workers with minimal effort and maximum efficiency.
